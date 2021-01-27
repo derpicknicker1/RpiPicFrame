@@ -22,6 +22,7 @@ var makeBSS = function (el, options) {
                 this.$items[0].classList.add('bss-show'); // add show class to first figure 
                 this.injectControls(el);
                 this.addEventListeners(el);
+
                 if (this.opts.auto) {
                     this.autoCycle(this.el, this.opts.speed, this.opts.pauseOnHover);
                 }
@@ -61,8 +62,8 @@ var makeBSS = function (el, options) {
                 spanNext.classList.add('bss-next');
         
                 // add contents
-                spanPrev.innerHTML = '&laquo;';
-                spanNext.innerHTML = '&raquo;';
+                spanPrev.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&laquo;&nbsp;&nbsp;&nbsp;&nbsp;';
+                spanNext.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&raquo;&nbsp;&nbsp;&nbsp;&nbsp;';
                 
                 // append elements to fragment, then append fragment to DOM
                 docFrag.appendChild(spanPrev);
@@ -114,6 +115,7 @@ var makeBSS = function (el, options) {
                 fsControl = document.createElement("span");
                 
                 fsControl.classList.add('bss-fullscreen');
+                fsControl.innerHTML = '&laquo;';
                 el.appendChild(fsControl);
                 el.querySelector('.bss-fullscreen').addEventListener('click', function () {
                     that.toggleFullScreen(el);
@@ -127,6 +129,9 @@ var makeBSS = function (el, options) {
                 });
                 ht.on('swipeleft', function(e) {
                     that.showCurrent(1); // increment & show
+                });
+                ht.on('tap', function(e) {
+                    that.toggleMenu(); //show/hide menu
                 });
             },
             toggleFullScreen: function(el){
@@ -154,7 +159,11 @@ var makeBSS = function (el, options) {
                       document.webkitExitFullscreen();
                     }
                 }
-            } // end toggleFullScreen
+            }, // end toggleFullScreen
+
+            toggleMenu: function(el) {
+
+            }
             
         }; // end Slideshow object .....
         

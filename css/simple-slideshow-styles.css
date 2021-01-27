@@ -1,6 +1,23 @@
+body, html{
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 .bss-slides{
   position: relative;
-  display: block; 
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
+  width:100%;
+  /*display: block; 
+  height: 100%;*/
+    
   line-height: 0;/*removes the gap if you put a border on the slideshow div*/   
 }
 figcaption {
@@ -11,8 +28,10 @@ figcaption {
 }
 .bss-slides figure{
   position: absolute;
-  top: 0;
+  /*top: 0;*/
+  margin: auto;
   width: 100%;
+  margin: 0px;
 }
 .bss-slides figure:first-child{
   position: relative;
@@ -61,11 +80,18 @@ figcaption {
   position: absolute;
   background: #000;
   background: rgba(0,0,0, .6);
-  top: 50%;
-  z-index: 4;
+  /*top: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*height:100%;*/
+  top: 0;
+  bottom: 0;
+  z-index: 10;
   font-size: 2em;
-  margin-top: -1.2em;
-  opacity: .3;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  opacity: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -76,16 +102,16 @@ figcaption {
   opacity: 1;
 }
 .bss-next{
-  right: -1px;
-  padding: 10px 5px 15px 10px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  right: 0px;
+  /*padding: 10px 5px 15px 10px;*/
+  border-top-left-radius: 55px;
+  border-bottom-left-radius: 55px;
 }
 .bss-prev{
   left: 0;
-  padding: 10px 10px 15px 5px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  /*padding: 10px 10px 15px 5px;*/
+  border-top-right-radius: 55px;
+  border-bottom-right-radius: 55px;
 }
 .bss-fullscreen{
   display: block;
@@ -99,6 +125,7 @@ figcaption {
   left: 5px;   
   cursor: pointer;    
   opacity: .3;
+  z-index: 4;
 } 
 .bss-fullscreen:hover{
   opacity: .8;   
