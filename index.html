@@ -3,43 +3,28 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>A simple DIY responsive slideshow made with HTML5, CSS3, and JavaScript</title>
+        <title>Diashow</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/simple-slideshow-styles.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <div class="bss-slides num1" tabindex="1" autofocus="autofocus">
-            <figure>
-		      <img src="demo/img/medium.jpg" width="100%" /><figcaption>"Medium" by <a href="https://www.flickr.com/photos/thomashawk/14586158819/">Thomas Hawk</a>.</figcaption> 
-            </figure>
-            <figure>
-		      <img src="demo/img/colorado.jpg" width="100%" /><figcaption>"Colorado" by <a href="https://www.flickr.com/photos/stuckincustoms/88370744">Trey Ratcliff</a>.</figcaption> 
-            </figure>
-            <figure>
-		      <img src="demo/img/monte-vista.jpg" width="100%" /><figcaption>"Early Morning at the Monte Vista Wildlife Refuge, Colorado" by <a href="https://www.flickr.com/photos/davesoldano/8572429635">Dave Soldano</a>.</figcaption> 
-            </figure>
-            <figure>
-		      <img src="demo/img/sunrise.jpg" width="100%" /><figcaption>"Sunrise in Eastern Colorado" by <a href="https://www.flickr.com/photos/35528040@N04/6673031153">Pam Morris</a>.</figcaption> 
-            </figure>
-            <figure>
-		      <img src="demo/img/colorado-colors.jpg" width="100%" /><figcaption>"colorado colors" by <a href="https://www.flickr.com/photos/cptspock/2857543585">Jasen Miller</a>.</figcaption> 
-            </figure>
-        </div> <!-- // bss-slides -->  
-<script src="js/hammer.min.js"></script><!-- for swipe support on touch interfaces -->
-<script src="js/better-simple-slideshow.js"></script>
-<script>
-var opts = {
-    auto : {
-        speed : 3500, 
-        pauseOnHover : false
-    },
-    fullScreen : false, 
-    swipe : true
-};
-makeBSS('.num1', opts);
-
-</script>
-</body>
+        <div class="menu">
+            <button id="btnFav" class="btn btnFav"></button>
+            <button id="btnInfo" class="btn btnInfo"></button>
+            <span id="dateSpan"></span>
+            <button id="btnSet" class="btn btnSet"></button>
+        </div>
+        <div class="slides diashow" tabindex="1" autofocus="autofocus">
+            <span class="prev">&nbsp;&nbsp;&nbsp;&nbsp;«&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="next">&nbsp;&nbsp;&nbsp;&nbsp;»&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div> <!-- // slides -->  
+        <script src="js/hammer.min.js"></script>
+        <script src="js/slideshow.js"></script>
+        <script>
+            makeSlideShow('.diashow');
+            
+        </script>
+    </body>
 </html>

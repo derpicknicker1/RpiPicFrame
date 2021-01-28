@@ -1,0 +1,16 @@
+{
+	"server": {
+		"host": "localhost",
+		"port": 80,
+		"reloader": true,
+		"debug":true
+	},
+	"bot": {
+		"allowed_chats": [],
+		"token": "XXXXXXXXX:xxx-xxxxxxxxxxxxxx-xxxxxxxxxxxxxxxx" 
+	},
+	"client": {},
+	"image_dir": "/img/",
+	"meta_file": "meta.json",
+	"max_photos": 10
+}
