@@ -7,10 +7,20 @@
 	},
 	"bot": {
 		"allowed_chats": [],
-		"token": "XXXXXXXXX:xxx-xxxxxxxxxxxxxx-xxxxxxxxxxxxxxxx" 
+		"token": "XXXXXXXXX:xxx-xxxxxxxxxxxxxx-xxxxxxxxxxxxxxxx"
 	},
-	"client": {},
-	"image_dir": "/img/",
+	"client": {
+		"selector": "figure",
+		"auto" : {
+			"speed" : 3500, 
+			"pauseOnHover" : false
+		},
+		"swipe" : true,
+		"nav_width": "3em",
+		"data_load_interval": 10,
+		"cursor": true
+	},
+	"image_dir": "img/",
 	"meta_file": "meta.json",
 	"max_photos": 10
 }

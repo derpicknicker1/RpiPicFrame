@@ -1,4 +1,4 @@
-from bottle import route, run, template, Bottle, static_file
+from bottle import route, run, template, Bottle, static_file, request, response, abort
 from os import listdir
 from os.path import isfile, join
 from os import path
@@ -46,5 +46,22 @@ def server_data():
 			ret_data[f] = data[f];
 
 	return ret_data
+
+@app.route('/update', method='POST')
+def server_update():
+	input = request.json
+	for update in input:
+		if 'type' in update:
+			if update['type'] == 'img' and 'name' in update:
+				with open(settings['image_dir'] + settings['meta_file']) as json_file:
+					data = json.load(json_file)
+				if 'fav' in update:
+					data[update['name']]['fav'] = update['fav']
+					with open(settings['image_dir'] + settings['meta_file'], "w") as file:
+						file.seek(0)
+						json.dump(data, file, sort_keys=True, indent=4)
+				return "Success"
+	
+	return abort(500, "Wrong Data")
 
 app.run(host=settings['server']['host'], port=settings['server']['port'], reloader=settings['server']['reloader'], debug=settings['server']['debug'])

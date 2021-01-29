@@ -11,14 +11,19 @@
     </head>
     <body>
         <div class="menu">
-            <button id="btnFav" class="btn btnFav"></button>
-            <button id="btnInfo" class="btn btnInfo"></button>
-            <span id="dateSpan"></span>
-            <button id="btnSet" class="btn btnSet"></button>
+            <div class="menuContainerLeft">
+                <button id="btnFav" class="btn btnFav"></button>
+                <img class="imgInfo">
+                <span id="dateSpan" width="100%"></span>
+            </div>
+            <div class="menuContainerRight">
+                <button id="btnSwitch" class="btn btnSwitchOff"></button>
+                <button id="btnSet" class="btn btnSet"></button>
+            </div>
         </div>
         <div class="slides diashow" tabindex="1" autofocus="autofocus">
-            <span class="prev">&nbsp;&nbsp;&nbsp;&nbsp;«&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span class="next">&nbsp;&nbsp;&nbsp;&nbsp;»&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="prev">«</span>
+            <span class="next">»</span>
         </div> <!-- // slides -->  
         <script src="js/hammer.min.js"></script>
         <script src="js/slideshow.js"></script>
