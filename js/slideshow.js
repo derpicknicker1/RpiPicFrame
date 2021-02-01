@@ -25,6 +25,10 @@ Slideshow = {
 					that.autoCycle(that.el, that.settings.client.auto.speed, that.settings.client.pauseOnHover);
 				if (that.settings.client.swipe)
 					that.addSwipe(that.el);
+				document.getElementById('cntPic').innerHTML = that.settings.max_photos;
+				document.getElementById('loadTime').innerHTML = that.settings.client.data_load_interval;
+				document.getElementById('showTime').innerHTML = that.settings.client.auto.speed;
+
 			}
 			else
 				console.warn(request.statusText, request.responseText);
@@ -135,6 +139,10 @@ Slideshow = {
 		document.querySelector('#btnSet').addEventListener('click', function () {
 			that.showSettings();
 		}, false);
+
+		document.querySelector('#closeSet').addEventListener('click', function () {
+			that.hideSettings();
+		}, false);
 		
 		el.onkeydown = function (e) {
 			e = e || window.event;
@@ -166,7 +174,12 @@ Slideshow = {
 		request.send(JSON.stringify([ {"type":"img", "name": name , "fav": newFav }]));
 	},
 	showSettings: function() {
-		console.log("Settings clicked");
+		this.toggleMenu();
+		document.getElementById('settings').style.visibility = "visible";
+	},
+	hideSettings: function() {
+		this.toggleMenu();
+		document.getElementById('settings').style.visibility = "hidden";
 	},
 	autoCycle: function (el, speed, pauseOnHover) {
 		var that = this,
